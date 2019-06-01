@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+
 
 import Tabs from './Tabs';
 import Cards from './Cards';
@@ -75,3 +77,14 @@ export default class Content extends Component {
     );
   }
 }
+
+Tabs.propTypes = {
+  tabs: PropTypes.arrayOf(PropTypes.string.isRequired),
+  selectTabHandler: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired
+}
+
+Cards.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.object.isRequired)
+}
+
